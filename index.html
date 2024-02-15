@@ -1,11 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>Proyecto M1</h1>
-</body>
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <header class="mainHeader" id="inicio">
+      <h1>Victor De Menezes</h1>
+      <img
+        class="logo"
+        src="Assets/WhatsApp Image 2024-02-07 at 09.35.41-Photoroom.png-Photoroom.png"
+        alt="Fotografia de Victor De Menezes"
+      />
+    </header>
+    <header class="sticky">
+      <h2>Mi Pagina Web</h2>
+      <a href="#inicio" class="subir">☝🏻</a>
+    </header>
+    <main>
+      <section class="section">
+        <h2>Sobre Mi</h2>
+        <p>
+          Abogado especializado en Derecho Procesal, estudiante Web Full Stack
+          en SoyHenry, autodidacta y apasionado por el saber y las Tecnologias
+        </p>
+      </section>
+      <section class="section">
+        <h2>Mis Tecnologias Favoritas</h2>
+        <br />
+        <div id="sectionTec" class="container">
+          <article class="card">
+            <header><h3>HTML</h3></header>
+            <img src="Assets/icons8-html-240.png" alt="Logo de HTML" />
+          </article>
+          <article class="card">
+            <header><h3>CSS</h3></header>
+            <img src="Assets/icons8-css-240.png" alt="Logo de CSS" />
+          </article>
+          <article class="card">
+            <header><h3>JavaScript</h3></header>
+            <img
+              src="Assets/icons8-javascript-240.png"
+              alt="Logo de JavaScript"
+            />
+          </article>
+          <article class="card">
+            <h3>React</h3>
+            <img src="Assets/icons8-reaccionar-240.png" alt="Logo de React" />
+          </article>
+        </div>
+        <div>
+          <label for="tecnologias"> </label>
+          <h3>Nombre de Tecnologia:</h3>
+          <input type="text" id="nombreTec" />
+          <label for="imagenTec"
+            ><h3>Url de la Imagen de la Tecnologia</h3></label
+          >
+          <input type="url" id="imagenTec" />
+          <button onclick="agregarTec()">Añadir</button>
+        </div>
+      </section>
+      <section class="section">
+        <h2>Mis Actividades Favoritas</h2>
+        <form action="actividades">
+          <label for="nombreAct"><h3>TITULO</h3></label>
+          <input
+            type="text"
+            name="nombreAct"
+            id="nombreAct"
+            placeholder="Escribe tu actividad"
+          />
+          <label for="descripcionAct"><h3>DESCRIPCIÓN</h3></label>
+          <input
+            type="text"
+            name="descripcionAct"
+            id="descripcionAct"
+            autocomplete="off"
+            placeholder="Describe la actividad"
+            size="20"
+          />
+          <label for="urlImgAct"><h3>URL DE IMAGEN</h3></label>
+          <input
+            type="url"
+            name="urlImgAct"
+            id="urlImgAct"
+            autocomplete="off"
+            placeholder="Ingresa la Url de la Imagen"
+          />
+          <button type="button" onclick="agregarAct()">Enviar</button>
+        </form>
+      </section>
+      <section class="section" id="containerAct">
+        <h3 id="textAct">Sin actividades por el momento</h3>
+      </section>
+    </main>
+    <script src="scripts/index.js"></script>
+  </body>
 </html>

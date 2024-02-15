@@ -1,0 +1,46 @@
+/* se cuenta todo el tamaño al determinar el ancho y alto para el box  */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* remueve todos los margenes */
+* {
+  margin: 0;
+}
+/* Accesibilidad en la altura del renglon y mejor render de texto */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/* establece las medias */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: blox;
+  max-width: 100%;
+}
+/* saca las tipografias de los forms */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* evita el overflow de los textos */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/* evita apilar automaticamente */
+#root,
+#__next {
+  isolation: isolate;
+}
