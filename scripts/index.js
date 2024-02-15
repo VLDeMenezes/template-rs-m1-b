@@ -1,3 +1,4 @@
+// funcion para agregar tecnologias a la seccion, toma los valores introducidos por usuario
 function agregarTec() {
   let nombre = document.getElementById("nombreTec").value;
   let imagen = document.getElementById("imagenTec").value;
@@ -13,6 +14,7 @@ function agregarTec() {
   document.getElementById("imagenTec").value = "";
 }
 
+// funcion para agregar actividad a la seccion, toma los valores introducidos por usuario, borra texto default, agrega clase de contenedor grid
 function agregarAct() {
   let nombre = document.getElementById("nombreAct").value;
   let descripcion = document.getElementById("descripcionAct").value;
@@ -28,7 +30,7 @@ function agregarAct() {
 
   document.getElementById("containerAct").insertAdjacentHTML(
     "beforeend",
-    `<article class="card imgAct">
+    `<article class="card ">
       <h3>${nombre}</h3>
       <p>${descripcion}</p>
       <img src="${url}" alt="Imagen de ${nombre}" />
