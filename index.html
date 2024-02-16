@@ -68,27 +68,27 @@
           <label for="imagenTec"
             ><h3>Url de la Imagen de la Tecnologia</h3></label
           >
-          <input type="url" id="imagenTec" required />
-          <button onclick="agregarTec()">Añadir</button>
+          <input type="url" id="imageTec" required />
+          <button onclick="addNewTec()">Añadir</button>
         </div>
       </section>
       <section class="section">
         <h2>Mis Actividades Favoritas</h2>
         <!-- formulario para agregar actividades -->
         <form action="actividades">
-          <label for="nombreAct"><h3>TITULO</h3></label>
+          <label for="namAct"><h3>TITULO</h3></label>
           <input
             type="text"
-            name="nombreAct"
-            id="nombreAct"
+            name="nameAct"
+            id="namAct"
             placeholder="Escribe tu actividad"
             required
           />
-          <label for="descripcionAct"><h3>DESCRIPCIÓN</h3></label>
+          <label for="descripAct"><h3>DESCRIPCIÓN</h3></label>
           <input
             type="text"
-            name="descripcionAct"
-            id="descripcionAct"
+            name="descriptionAct"
+            id="descripAct"
             autocomplete="off"
             placeholder="Describe la actividad"
             size="20"
@@ -102,7 +102,15 @@
             placeholder="Ingresa la Url de la Imagen"
             required
           />
-          <button type="button" onclick="agregarAct()">Enviar</button>
+          <button type="button" onclick="addNewAct()">Enviar</button>
+          <br />
+        </form>
+        <form>
+          <h3>Actividades:</h3>
+          <select name="selectAct" id="selectAct" disabled="disabled"></select>
+          <button disabled id="butonDelete" onclick="deleteAct(id)">
+            Eliminar actividad
+          </button>
         </form>
       </section>
       <!-- contenedor de actividades -->
