@@ -1,4 +1,5 @@
 // funcion para agregar tecnologias a la seccion, toma los valores introducidos por usuario
+
 function agregarTec() {
   let nombre = document.getElementById("nombreTec").value;
   let imagen = document.getElementById("imagenTec").value;

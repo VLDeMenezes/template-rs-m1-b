@@ -64,11 +64,11 @@
           <!-- div para agregar tecnologias -->
           <label for="tecnologias"> </label>
           <h3>Nombre de Tecnologia:</h3>
-          <input type="text" id="nombreTec" />
+          <input type="text" id="nombreTec" required />
           <label for="imagenTec"
             ><h3>Url de la Imagen de la Tecnologia</h3></label
           >
-          <input type="url" id="imagenTec" />
+          <input type="url" id="imagenTec" required />
           <button onclick="agregarTec()">Añadir</button>
         </div>
       </section>
@@ -82,6 +82,7 @@
             name="nombreAct"
             id="nombreAct"
             placeholder="Escribe tu actividad"
+            required
           />
           <label for="descripcionAct"><h3>DESCRIPCIÓN</h3></label>
           <input
@@ -99,6 +100,7 @@
             id="urlImgAct"
             autocomplete="off"
             placeholder="Ingresa la Url de la Imagen"
+            required
           />
           <button type="button" onclick="agregarAct()">Enviar</button>
         </form>
@@ -108,6 +110,7 @@
         <h3 id="textAct">Sin actividades por el momento</h3>
       </section>
     </main>
+
     <script src="scripts/index.js"></script>
   </body>
 </html>

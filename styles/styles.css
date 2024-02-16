@@ -130,3 +130,15 @@ main {
     height: 55%;
   }
 }
+@media (max-width: 380px) {
+  html {
+    font-size: small;
+  }
+  .mainHeader {
+    font-size: small;
+    height: 15vh;
+  }
+  .logo {
+    height: 50%;
+  }
+}
