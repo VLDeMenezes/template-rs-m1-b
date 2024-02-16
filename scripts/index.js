@@ -1,6 +1,6 @@
 // Clase Cards
 class Activity {
-  static idNumero = 1;
+  static idNumero = 0;
   constructor(title, imgUrl, description) {
     this.id = Activity.idNumero++;
     this.title = title;
@@ -43,12 +43,12 @@ class Repository {
   }
 }
 
+//Creacion de Act como una instancia de repositorio.
 const act = new Repository();
 function addNewTec() {
   let title = document.getElementById(`nombreTec`).value;
-  let imgUrl = document.getElementById(`imageTec`).value;
-
-  act.createActivity(title, imgUrl, "");
+  let imgUrl = document.getElementById(`imagenTec`).value;
+  act.createActivity(title, imgUrl, "Sin descripcion");
   document.getElementById(`sectionTec`).insertAdjacentHTML(
     "beforeend",
     `<article class="card">
@@ -58,7 +58,7 @@ function addNewTec() {
   );
 
   document.getElementById(`nombreTec`).value = "";
-  document.getElementById(`imageTec`).value = "";
+  document.getElementById(`imagenTec`).value = "";
 }
 
 function addNewAct() {
@@ -66,9 +66,10 @@ function addNewAct() {
   let imgUrl = document.getElementById(`urlImgAct`).value;
   let description = document.getElementById(`descripAct`).value;
   let text = document.getElementById("textAct");
-  const padre = document.getElementById("containerAct");
+  let padre = document.getElementById("containerAct");
   act.createActivity(title, imgUrl, description);
-  const { id } = act;
+  const idCard = Activity.idNumero;
+
   if (text) {
     padre = text.parentNode;
     padre.removeChild(text);
@@ -87,15 +88,22 @@ function addNewAct() {
   document.getElementById(`butonDelete`).removeAttribute(`disabled`);
   document
     .getElementById(`selectAct`)
-    .insertAdjacentHTML(`beforeend`, `<option value="${id}">${title}</option>`);
+    .insertAdjacentHTML(
+      `beforeend`,
+      `<option value="${title}">${title}</option>`
+    );
   document.getElementById(`urlImgAct`).value = "";
   document.getElementById(`namAct`).value = "";
   document.getElementById(`descripAct`).value = "";
   console.log(act.getAllActivities());
 }
 
-function deleteAct(id) {
+function deleteAct() {
+  criterio = document.getElementById(`selectAct`).value;
+  console.log(criterio);
+  id = act.filterActivity(criterio).id;
   act.deleteActivity(id);
+  console.log(act.getAllActivities());
 }
 // pruebas
 // act.createActivity("correr", "https:/", "Salir a la aventura");

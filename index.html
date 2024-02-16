@@ -62,13 +62,13 @@
         </div>
         <div>
           <!-- div para agregar tecnologias -->
-          <label for="tecnologias"> </label>
+          <label for="nombreTec"> </label>
           <h3>Nombre de Tecnologia:</h3>
           <input type="text" id="nombreTec" required />
           <label for="imagenTec"
             ><h3>Url de la Imagen de la Tecnologia</h3></label
           >
-          <input type="url" id="imageTec" required />
+          <input type="url" id="imagenTec" required />
           <button onclick="addNewTec()">Añadir</button>
         </div>
       </section>
@@ -108,7 +108,7 @@
         <form>
           <h3>Actividades:</h3>
           <select name="selectAct" id="selectAct" disabled="disabled"></select>
-          <button disabled id="butonDelete" onclick="deleteAct(id)">
+          <button type="button" disabled id="butonDelete" onclick="deleteAct()">
             Eliminar actividad
           </button>
         </form>
