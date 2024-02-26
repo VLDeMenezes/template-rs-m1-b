@@ -1,16 +1,16 @@
 /* paleta de colores */
 :root {
-  --body-bg-color: #1aa3b8;
-  --main-bg-color: #f8efed;
+  --body-bg-color: rgb(33, 43, 54);
+  --main-bg-color: rgb(200, 200, 200);
   --second-bg-color: #146a806b;
-  --detail-bg-color: #123f51;
   --text-color: #121c2c;
+  --deleteBtn: rgb(231, 76, 60);
 }
 html {
   scroll-behavior: smooth;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: medium;
-  color: rgb(70, 60, 60);
+  color: var(--text-color);
 }
 body {
   background: var(--body-bg-color);
@@ -20,27 +20,34 @@ main {
   margin: auto;
   padding: 1vw;
   margin-top: 1vh;
-  background: white;
+  background: var(--main-bg-color);
   border-radius: 15px;
 }
 /* Cabecera titulo y foto */
 .mainHeader {
   width: 90%;
   height: 40vh;
-  margin: auto;
+  margin: 1rem auto 0;
   display: grid;
   grid-template-columns: 1fr 30%;
-  /* grid-template-areas: "titulo foto"; */
-  background: var(--second-bg-color);
+  background: var(--body-bg-color);
   font-style: italic;
   justify-content: space-evenly;
   text-align: center;
   align-items: flex-start;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+  border: medium solid var(--second-bg-color);
   overflow: hidden;
   font-size: 2rem;
   padding: 0.5rem;
+  color: #aeafe5;
+  text-shadow: 2px 5px #121c2c;
+}
+/* color de los titulos y sombras */
+h2 {
+  color: var(--text-color);
+  text-shadow: 3px 2px 2px #aeafe5;
 }
 /* foto de la cabecera */
 .logo {
@@ -82,9 +89,10 @@ main {
 /* contenedores de tarjetas */
 .container {
   display: grid;
-  grid-auto-rows: 22rem;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 250px));
+  grid-auto-rows: 21rem;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 200px));
   column-gap: 1rem;
+  margin: 1rem;
   justify-content: center;
 }
 /* tarjetas */
@@ -97,6 +105,9 @@ main {
   opacity: 60%;
   height: fit-content;
 }
+.card p {
+  margin: 10px;
+}
 /* efecto escala de tarjetas */
 .card:hover {
   transform: scale(110%);
@@ -104,11 +115,74 @@ main {
 }
 /* tamanio de images de tarjetas */
 .card img {
-  object-fit: contain;
-  height: 250px;
-  width: auto;
+  object-fit: cover;
+  height: 200px;
+  max-width: auto;
+}
+.button {
+  margin: 1rem;
+}
+.button:hover {
+  transform: scale(1.2);
+}
+form {
+  margin: auto;
+  width: 80%;
+}
+section input {
+  width: 40%;
+}
+form input {
+  width: 100%;
 }
 
+.deleteBttn {
+  position: static;
+  right: 5px;
+  margin: 2px auto 0 80%;
+  background-color: var(--deleteBtn);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.deleteBttn:hover {
+  border-radius: 20%;
+  transform: scale(1.1);
+}
+
+.deleteBttnAll {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  background: var(--deleteBtn);
+}
+.deleteBttnAll:hover {
+  transform: scale(1.2);
+}
+
+.disable {
+  display: none;
+}
+
+.footer {
+  width: 100%;
+  margin-top: 2rem;
+  background-color: var(--main-bg-color);
+  text-align: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+@media (min-width: 1001px) {
+  .logo {
+    height: 60%;
+  }
+}
 @media (max-width: 1000px) {
   .mainHeader {
     font-size: medium;

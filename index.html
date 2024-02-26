@@ -12,10 +12,13 @@
       type="image/x-icon"
     />
   </head>
-  <body>
+  <body id="inicio">
     <!-- cabecera con foto -->
-    <header class="mainHeader" id="inicio">
-      <h1>Victor <br />De Menezes</h1>
+    <header class="mainHeader">
+      <h1>
+        Victor <br />
+        De Menezes
+      </h1>
       <img
         class="logo"
         src="Assets/WhatsApp Image 2024-02-07 at 09.35.41-Photoroom.png-Photoroom.png"
@@ -28,7 +31,7 @@
       <a href="#inicio" class="subir">☝🏻</a>
     </header>
     <main>
-      <!-- secciones -->
+      <!-- seccion sobre mi -->
       <section class="section">
         <h2>Sobre Mi</h2>
         <p>
@@ -36,89 +39,74 @@
           en SoyHenry, autodidacta y apasionado por el saber y las Tecnologias
         </p>
       </section>
+      <!-- contenedor de tecnologias -->
       <section class="section">
         <h2>Mis Tecnologias Favoritas</h2>
         <br />
-        <div id="sectionTec" class="container">
-          <article class="card">
-            <header><h3>HTML</h3></header>
-            <img src="Assets/icons8-html-240.png" alt="Logo de HTML" />
-          </article>
-          <article class="card">
-            <header><h3>CSS</h3></header>
-            <img src="Assets/icons8-css-240.png" alt="Logo de CSS" />
-          </article>
-          <article class="card">
-            <header><h3>JavaScript</h3></header>
-            <img
-              src="Assets/icons8-javascript-240.png"
-              alt="Logo de JavaScript"
-            />
-          </article>
-          <article class="card">
-            <h3>React</h3>
-            <img src="Assets/icons8-reaccionar-240.png" alt="Logo de React" />
-          </article>
-        </div>
-        <div>
-          <!-- div para agregar tecnologias -->
-          <label for="nombreTec"> </label>
-          <h3>Nombre de Tecnologia:</h3>
-          <input type="text" id="nombreTec" required />
-          <label for="imagenTec"
-            ><h3>Url de la Imagen de la Tecnologia</h3></label
-          >
-          <input type="url" id="imagenTec" required />
-          <button onclick="addNewTec()">Añadir</button>
-        </div>
+        <div id="sectionTec" class="container tec"><article></article></div>
       </section>
+      <!-- seccion agregar tarjetas -->
       <section class="section">
-        <h2>Mis Actividades Favoritas</h2>
+        <h2>Agregar Tarjetas</h2>
         <!-- formulario para agregar actividades -->
         <form action="actividades">
-          <label for="namAct"><h3>TITULO</h3></label>
+          <label for="titleAct"><h3>TITULO</h3></label>
           <input
             type="text"
-            name="nameAct"
-            id="namAct"
-            placeholder="Escribe tu actividad"
+            name="nombreAct"
+            id="titleAct"
+            placeholder="Escribe el nombre de la Tarjeta"
             required
+            size="45"
           />
-          <label for="descripAct"><h3>DESCRIPCIÓN</h3></label>
+          <label for="descAct"><h3>DESCRIPCIÓN</h3></label>
           <input
             type="text"
-            name="descriptionAct"
-            id="descripAct"
+            name="descripcionAct"
+            id="descAct"
             autocomplete="off"
-            placeholder="Describe la actividad"
-            size="20"
+            placeholder="Aqui puedes poner una descripción"
+            size="45"
           />
-          <label for="urlImgAct"><h3>URL DE IMAGEN</h3></label>
+          <label for="imgUrAct"><h3>URL DE IMAGEN</h3></label>
           <input
             type="url"
             name="urlImgAct"
-            id="urlImgAct"
+            id="imgUrAct"
             autocomplete="off"
             placeholder="Ingresa la Url de la Imagen"
             required
+            size="45"
           />
-          <button type="button" onclick="addNewAct()">Enviar</button>
+          <label for="type"><h3>¿A qué referencia?</h3></label>
+          <select name="type" id="type">
+            <option value="1">Tecnologia</option>
+            <option value="2">Actividad</option>
+          </select>
           <br />
-        </form>
-        <form>
-          <h3>Actividades:</h3>
-          <select name="selectAct" id="selectAct" disabled="disabled"></select>
-          <button type="button" disabled id="butonDelete" onclick="deleteAct()">
-            Eliminar actividad
+          <button class="button" id="bttnAgregar">Enviar</button>
+          <br />
+          <button id="deleteBttnAll" class="deleteBttnAll">
+            Eliminar Todas las tarjetas
           </button>
         </form>
       </section>
       <!-- contenedor de actividades -->
-      <section class="section" id="containerAct">
-        <h3 id="textAct">Sin actividades por el momento</h3>
+      <section id="sectionAct" class="section">
+        <h2>Mis Actividades Favoritas</h2>
+        <h2 id="textAct">Sin actividades por el momento</h2>
+        <input
+          class="disable"
+          id="buscador"
+          type="search"
+          placeholder="Ingresa un Titulo para filtrar"
+        />
+        <div id="divAct" class="act container"></div>
       </section>
     </main>
-
+    <footer class="footer">
+      Diseñado por Victor L. Menezes, © derechos reservados y correspondientes.
+    </footer>
     <script src="scripts/index.js"></script>
   </body>
 </html>
