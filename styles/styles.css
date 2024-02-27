@@ -75,6 +75,16 @@ h2 {
   box-shadow: 0 0 5px;
   cursor: pointer;
   text-decoration: none;
+  color: #fff;
+}
+.volver {
+  color: #fff;
+  position: fixed;
+  top: 1vh;
+  right: 40px;
+  box-shadow: 0 0 5px;
+  cursor: pointer;
+  text-decoration: none;
 }
 /* secciones default */
 .section {
